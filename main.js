@@ -45,36 +45,4 @@ function updateMinuteChart(price, time) {
     minuteChart.data.labels.push(time);
     minuteChart.data.datasets[0].data.push(price);
 
-    // Limit the number of data points displayed (e.g., show the last 20 points)
-    const maxDataPoints = 20;
-    if (minuteChart.data.labels.length > maxDataPoints) {
-        minuteChart.data.labels.shift();
-        minuteChart.data.datasets[0].data.shift();
-    }
-
-    // Update the chart
-    minuteChart.update();
-}
-
-// Function to fetch 1-minute chart data
-async function fetchMinuteChartData() {
-    try {
-        const response = await fetch(`https://api.binance.com/api/v3/klines?symbol=${symbolToRetrieve}&interval=1m&limit=1`);
-        const data = await response.json();
-
-        // Extract the relevant data from the response
-        const price = parseFloat(data[0][4]); // Closing price
-        const timestamp = new Date(data[0][6]); // Timestamp
-
-        // Update the chart
-        updateMinuteChart(price, timestamp.toLocaleTimeString());
-    } catch (error) {
-        console.error('Error fetching 1-minute chart data:', error);
-    }
-}
-
-// Fetch crypto data and update the chart initially and at regular intervals
-fetchStockData();
-fetchMinuteChartData();
-setInterval(fetchStockData, 5000); // Update stock data every 5 seconds (adjust as needed)
-setInterval(fetchMinuteChartData, 60000); // Update minute chart data every 1 minute (adjust as needed)
+    // Limit the number of data points displayed (e.g., show the
