@@ -1,52 +1,37 @@
-/* style.css */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Platform</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Crypto Trading Platform</h1>
+    </header>
+    <main>
+        <table id="cryptoData">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                    <th>Change (%)</th>
+                </tr>
+            </thead>
+            <tbody id="cryptoTableBody">
+                <!-- Crypto data will be displayed here -->
+            </tbody>
+        </table>
+        <canvas id="minuteChart" width="800" height="400"></canvas>
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    padding: 10px;
-    color: white;
-    text-align: center;
-}
-
-main {
-    margin: 20px;
-}
-
-#cryptoData {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-}
-
-#cryptoData th, #cryptoData td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-#cryptoData th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-#minuteChart {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-h2 {
-    margin-top: 20px;
-}
-
-#expectedPrice {
-    font-size: 18px;
-    font-weight: bold;
-    color: #1E88E5; /* Blue color for the expected price */
-}
+        <div>
+            <h2>Expected Price (Next Day)</h2>
+            <p id="expectedPrice">$0.00</p>
+        </div>
+    </main>
+</body>
+</html>
