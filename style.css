@@ -35,4 +35,8 @@ main {
     color: white;
 }
 
-/* Add any additional styling you need */
+#minuteChart {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
