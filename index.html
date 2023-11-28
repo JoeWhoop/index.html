@@ -4,37 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Trading Platform</title>
-    <style>
-        /* Add your styles here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            padding: 10px;
-            color: white;
-            text-align: center;
-        }
-        main {
-            margin: 20px;
-        }
-        #cryptoData {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        #cryptoData th, #cryptoData td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        #cryptoData th {
-            background-color: #4CAF50;
-            color: white;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 </head>
 <body>
     <header>
@@ -54,7 +26,7 @@
                 <!-- Crypto data will be displayed here -->
             </tbody>
         </table>
+        <canvas id="minuteChart" width="800" height="400"></canvas>
     </main>
-    <script src="main.js"></script>
 </body>
 </html>
