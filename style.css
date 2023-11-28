@@ -40,3 +40,13 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
 }
+
+h2 {
+    margin-top: 20px;
+}
+
+#expectedPrice {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E88E5; /* Blue color for the expected price */
+}
