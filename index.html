@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Trading Platform</title>
+    <title>Crypto Trading Platform</title>
     <style>
         /* Add your styles here */
         body {
@@ -21,16 +21,16 @@
         main {
             margin: 20px;
         }
-        #stockData {
+        #cryptoData {
             border-collapse: collapse;
             width: 100%;
         }
-        #stockData th, #stockData td {
+        #cryptoData th, #cryptoData td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
-        #stockData th {
+        #cryptoData th {
             background-color: #4CAF50;
             color: white;
         }
@@ -38,62 +38,23 @@
 </head>
 <body>
     <header>
-        <h1>Stock Trading Platform</h1>
+        <h1>Crypto Trading Platform</h1>
     </header>
     <main>
-        <table id="stockData">
+        <table id="cryptoData">
             <thead>
                 <tr>
                     <th>Symbol</th>
-                    <th>Name</th>
                     <th>Price</th>
                     <th>Change</th>
                     <th>Change (%)</th>
                 </tr>
             </thead>
-            <tbody id="stockTableBody">
-                <!-- Stock data will be displayed here -->
+            <tbody id="cryptoTableBody">
+                <!-- Crypto data will be displayed here -->
             </tbody>
         </table>
     </main>
-    <script>
-        // Replace with your API endpoint or use a library to fetch data
-        const apiUrl = 'https://api.example.com/stocks';
-
-        // Fetch stock data from the API
-        async function fetchStockData() {
-            try {
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-
-                // Update the stock table with the received data
-                updateStockTable(data);
-            } catch (error) {
-                console.error('Error fetching stock data:', error);
-            }
-        }
-
-        // Update the stock table with the latest data
-        function updateStockTable(data) {
-            const stockTableBody = document.getElementById('stockTableBody');
-            stockTableBody.innerHTML = '';
-
-            data.forEach(stock => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${stock.symbol}</td>
-                    <td>${stock.name}</td>
-                    <td>${stock.price}</td>
-                    <td>${stock.change}</td>
-                    <td>${stock.changePercentage}%</td>
-                `;
-                stockTableBody.appendChild(row);
-            });
-        }
-
-        // Fetch stock data initially and set an interval for periodic updates
-        fetchStockData();
-        setInterval(fetchStockData, 5000); // Update every 5 seconds (adjust as needed)
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
